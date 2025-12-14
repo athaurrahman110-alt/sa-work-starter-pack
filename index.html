@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KSA Work Starter Pack - আপনার সাফল্যের নিশ্চিত গাইড</title>
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg0:#0b1020;
+      --bg1:#0e1530;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.10);
+      --stroke: rgba(255,255,255,.14);
+      --text:#e9ecff;
+      --muted: rgba(233,236,255,.75);
+      --brand:#6ea8ff;
+      --brand2:#7c5cff;
+      --accent:#22c55e;
+      --warn:#ffb020;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --shadow2: 0 12px 30px rgba(0,0,0,.25);
+      --radius: 18px;
+      --radius2: 28px;
+      --max: 1050px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins','SolaimanLipi',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(110,168,255,.30), transparent 55%),
+        radial-gradient(900px 600px at 55% 95%, rgba(34,197,94,.22), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 22px 16px 90px;}
+
+    /* Top bar */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 16px;
+      border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      backdrop-filter: blur(14px);
+      border-radius: 999px;
+      box-shadow: var(--shadow2);
+      position: sticky;
+      top: 12px;
+      z-index: 50;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width: 0;
+    }
+    .logo{
+      width:38px; height:38px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 24px rgba(124,92,255,.35);
+      display:grid; place-items:center;
+      border: 1px solid rgba(255,255,255,.18);
+      flex:0 0 auto;
+    }
+    .logo svg{width:22px; height:22px}
+    .brand .txt{line-height:1.1; min-width:0}
+    .brand .txt b{display:block; font-weight:800; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .brand .txt span{display:block; font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+
+    .pill{
+      display:flex; align-items:center; gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .chip{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      padding:8px 10px;
+      border-radius:999px;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(34,197,94,.15);
+    }
+    .chip strong{color:var(--text); font-weight:700}
+
+    /* Hero */
+    .hero{
+      margin-top:18px;
+      border-radius: var(--radius2);
+      border:1px solid var(--stroke);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(600px 300px at 20% 10%, rgba(110,168,255,.35), transparent 60%),
+        radial-gradient(700px 350px at 85% 25%, rgba(124,92,255,.35), transparent 55%),
+        radial-gradient(500px 250px at 50% 110%, rgba(34,197,94,.22), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .hero-inner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      padding: 34px 26px;
+      align-items:center;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
+      color: rgba(233,236,255,.88);
+      font-size: 12px;
+      letter-spacing:.2px;
+    }
+    .kicker .star{
+      width: 18px; height: 18px; border-radius: 6px;
+      display:grid; place-items:center;
+      background: rgba(255,176,32,.16);
+      border: 1px solid rgba(255,176,32,.25);
+      color: #ffd38a;
+      flex:0 0 auto;
+    }
+    .hero h1{
+      margin: 14px 0 10px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.6px;
+    }
+    .hero p{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.8;
+    }
+
+    .hero-actions{
+      display:flex; flex-wrap:wrap; gap:12px; align-items:center;
+      margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration:none;
+      border: 1px solid rgba(255,255,255,.18);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--accent), #16a34a);
+      color:#07130b;
+      box-shadow: 0 18px 35px rgba(34,197,94,.28);
+      border-color: rgba(34,197,94,.45);
+    }
+    .btn-primary:hover{transform: translateY(-2px); box-shadow: 0 22px 44px rgba(34,197,94,.32);}
+    .btn-ghost{
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn-ghost:hover{transform: translateY(-2px); background: rgba(255,255,255,.11);}
+
+    .submeta{
+      display:flex; gap:14px; flex-wrap:wrap;
+      margin-top: 12px;
+      color: rgba(233,236,255,.70);
+      font-size: 12.5px;
+    }
+    .submeta span{
+      display:inline-flex; gap:8px; align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
+    .submeta svg{width:16px; height:16px; opacity:.9}
+
+    /* Mock book / cover card */
+    .cover{
+      display:grid; place-items:center;
+    }
+    .book{
+      width:min(360px, 100%);
+      aspect-ratio: 3 / 4;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        linear-gradient(135deg, rgba(110,168,255,.26), rgba(124,92,255,.20)),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      position:relative;
+      overflow:hidden;
+      box-shadow: 0 30px 70px rgba(0,0,0,.40);
+      transform: perspective(900px) rotateY(-12deg) rotateX(4deg);
+      transition: transform .25s ease;
+    }
+    .book:hover{transform: perspective(900px) rotateY(-8deg) rotateX(2deg) translateY(-2px);}
+    .book::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(220px 140px at 20% 18%, rgba(255,255,255,.18), transparent 60%),
+        radial-gradient(260px 160px at 80% 30%, rgba(255,255,255,.14), transparent 62%),
+        radial-gradient(260px 160px at 50% 110%, rgba(34,197,94,.18), transparent 62%);
+      opacity:.9; pointer-events:none;
+    }
+    .book .img{
+      position:absolute; inset:0;
+      display:grid; place-items:center;
+      padding: 18px;
+    }
+    .book img{
+      width:100%; height:100%; object-fit:cover;
+      border-radius: 14px;
+      filter: saturate(1.05) contrast(1.02);
+      opacity:.92;
+    }
+    .book .fallback{
+      width:100%; height:100%;
+      border-radius: 14px;
+      border:1px dashed rgba(255,255,255,.22);
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding: 18px;
+      background: linear-gradient(135deg, rgba(0,0,0,.25), rgba(0,0,0,.08));
+    }
+    .fallback .t1{font-weight:900; font-size:18px; letter-spacing:.2px}
+    .fallback .t2{color: rgba(233,236,255,.75); font-size:12px; margin-top:6px}
+    .badge{
+      position:absolute; top:16px; right:16px;
+      background: rgba(255,176,32,.14);
+      border:1px solid rgba(255,176,32,.26);
+      color:#ffd38a;
+      padding:8px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight:800;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Sections */
+    .section{
+      margin-top: 20px;
+      border-radius: var(--radius2);
+      border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow2);
+      padding: 22px;
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size: 22px;
+      letter-spacing:-.2px;
+    }
+    .section p{margin:0; color:var(--muted); line-height:1.85}
+
+    /* Feature grid */
+    .grid{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 6;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding: 16px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.18);
+      transition: transform .18s ease, background .18s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .card:hover{transform: translateY(-2px); background: rgba(255,255,255,.085);}
+    .card .hd{
+      display:flex; align-items:flex-start; gap:12px;
+      margin-bottom: 8px;
+    }
+    .ic{
+      width:38px; height:38px; border-radius: 14px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.16);
+      background: linear-gradient(135deg, rgba(110,168,255,.22), rgba(124,92,255,.18));
+      box-shadow: 0 10px 24px rgba(110,168,255,.12);
+      flex:0 0 auto;
+    }
+    .card b{font-size: 15px; letter-spacing:.1px}
+    .card span{display:block; color:var(--muted); font-size: 13px; margin-top: 4px; line-height:1.75}
+    .mini{
+      margin-top: 12px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .tag{
+      font-size: 12px;
+      color: rgba(233,236,255,.82);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    /* Pricing / CTA */
+    .cta{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items:stretch;
+    }
+    .pricebox{
+      border-radius: 18px;
+      border:1px solid rgba(34,197,94,.35);
+      background: linear-gradient(135deg, rgba(34,197,94,.14), rgba(255,255,255,.05));
+      padding: 18px;
+      box-shadow: 0 18px 38px rgba(34,197,94,.12);
+    }
+    .pricebox h3{margin:0 0 8px; font-size:18px}
+    .price{
+      display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+      margin: 10px 0 10px;
+    }
+    .price .big{font-size: 36px; font-weight:900; letter-spacing:-.6px; color:#bfffd2}
+    .price .sub{color: rgba(233,236,255,.72); font-size: 13px}
+    .benefits{
+      margin: 12px 0 0; padding:0; list-style:none;
+      display:grid; gap:8px;
+      color: rgba(233,236,255,.85);
+      font-size: 13.5px;
+    }
+    .benefits li{display:flex; gap:10px; align-items:flex-start}
+    .check{
+      width:18px; height:18px; border-radius: 6px;
+      display:grid; place-items:center;
+      background: rgba(34,197,94,.16);
+      border:1px solid rgba(34,197,94,.26);
+      flex:0 0 auto;
+      margin-top: 2px;
+    }
+
+    .trustbox{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding: 18px;
+    }
+    .trustbox h4{margin:0 0 10px; font-size: 16px}
+    .trustgrid{
+      display:grid; gap:10px;
+    }
+    .trustitem{
+      display:flex; gap:12px; align-items:flex-start;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.10);
+    }
+    .trustitem b{font-size:13px}
+    .trustitem span{display:block; color:var(--muted); font-size:12px; margin-top:2px; line-height:1.6}
+
+    /* FAQ */
+    .faq{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    details{
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding: 14px 14px;
+      box-shadow: 0 10px 22px rgba(0,0,0,.16);
+    }
+    summary{
+      cursor:pointer;
+      font-weight: 800;
+      list-style:none;
+      display:flex; justify-content:space-between; gap:10px; align-items:center;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary .q{font-size:14px}
+    summary .plus{
+      width:28px; height:28px; border-radius: 10px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.10);
+      flex:0 0 auto;
+    }
+    details p{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.75}
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      padding: 18px 12px;
+      color: rgba(233,236,255,.65);
+      text-align:center;
+      font-size: 12.5px;
+    }
+    footer a{color: rgba(233,236,255,.85); text-decoration:none; border-bottom:1px dashed rgba(255,255,255,.25)}
+    footer a:hover{opacity:.9}
+
+    /* Sticky mobile CTA */
+    .sticky{
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 60;
+      display:none;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(10,14,30,.70);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 22px 55px rgba(0,0,0,.45);
+      padding: 10px;
+    }
+    .sticky .row{
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+    }
+    .sticky .left{
+      min-width:0;
+    }
+    .sticky .left b{display:block; font-size: 13.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .sticky .left span{display:block; font-size: 12px; color: rgba(233,236,255,.72)}
+    .sticky .btn{padding: 12px 14px; font-size: 13px}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-inner{grid-template-columns: 1fr; padding: 28px 18px}
+      .cover{order: -1}
+      .cta{grid-template-columns: 1fr}
+      .faq{grid-template-columns: 1fr}
+      .card{grid-column: span 12}
+      .sticky{display:block}
+      .topbar{position: static}
+    }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto}
+      .book, .btn, .card{transition:none}
+    }
+
+    /* ===========================
+       ✅ ADD ONLY: Testimonials CSS
+       =========================== */
+    .t-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 10px;
+      flex-wrap:wrap;
+    }
+    .t-head .right{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .t-grid{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .t-card{
+      grid-column: span 6;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding: 16px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.18);
+      transition: transform .18s ease, background .18s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .t-card:hover{transform: translateY(-2px); background: rgba(255,255,255,.085);}
+    .t-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 10px;
+    }
+    .t-user{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .t-avatar{
+      width:38px;height:38px;border-radius: 14px;
+      display:grid;place-items:center;
+      border:1px solid rgba(255,255,255,.16);
+      background: linear-gradient(135deg, rgba(110,168,255,.22), rgba(124,92,255,.18));
+      box-shadow: 0 10px 24px rgba(110,168,255,.12);
+      flex:0 0 auto;
+      font-weight:900;
+      color: rgba(233,236,255,.92);
+      letter-spacing:.3px;
+    }
+    .t-meta{min-width:0}
+    .t-meta b{
+      display:block;
+      font-size: 14px;
+      letter-spacing:.1px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .t-meta span{
+      display:block;
+      color:var(--muted);
+      font-size: 12px;
+      margin-top:2px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .t-stars{
+      display:flex; gap:3px; align-items:center; flex:0 0 auto;
+    }
+    .t-stars svg{width:14px;height:14px; fill:#ffd38a; opacity:.95}
+    .t-quote{
+      margin:0;
+      color: rgba(233,236,255,.82);
+      font-size: 13.5px;
+      line-height: 1.75;
+    }
+    .t-foot{
+      margin-top: 12px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .t-badge{
+      font-size:12px;
+      color: rgba(233,236,255,.82);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .t-badge.green{
+      border-color: rgba(34,197,94,.26);
+      background: rgba(34,197,94,.10);
+      color:#bfffd2;
+    }
+    @media (max-width: 920px){
+      .t-card{grid-column: span 12}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- ✅ Topbar -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z" stroke="white" stroke-width="1.6" opacity=".95"/>
+            <path d="M8.2 12.4l2.2 2.2 5.6-5.6" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="txt">
+          <b>KSA Work Starter Pack</b>
+          <span>সৌদি আরবে কাজ শুরু করার প্রিমিয়াম গাইড</span>
+        </div>
+      </div>
+
+      <div class="pill">
+        <div class="chip"><span class="dot"></span> <span><strong>Updated</strong> • 2025</span></div>
+        <div class="chip">PDF • মোবাইল-ফ্রেন্ডলি</div>
+      </div>
+    </div>
+
+    <!-- ✅ Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">
+            <span class="star">★</span>
+            <span>ভিসা → ইকামা → জব → লাইফ — সব এক জায়গায়</span>
+          </div>
+
+          <h1>আর কোনো দুশ্চিন্তা নয়—<br/>শুরু হোক আপনার <span style="color:#b8c7ff;">সফল KSA যাত্রা</span>।</h1>
+
+          <p>
+            আপনি কি সৌদি আরবে নতুন কাজ শুরু করতে যাচ্ছেন? এই স্টার্টার প্যাক আপনাকে
+            <strong>প্রথম দিন থেকেই</strong> আত্মবিশ্বাসী করবে—ভিসা, ইকামা, কর্মক্ষেত্র,
+            বাজেট, আইন, সংস্কৃতি—সবকিছুর ক্লিয়ার গাইডলাইনসহ।
+          </p>
+
+          <div class="hero-actions">
+            <!-- ✅ Replace your download/payment link here -->
+            <a class="btn btn-primary" href="your-ebook-download-link.pdf">
+              এখনই কিনুন — ৳499
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 17L17 7" stroke="#07130b" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10 7h7v7" stroke="#07130b" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+
+            <a class="btn btn-ghost" href="#inside">
+              ভিতরে কী আছে দেখুন
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 5v14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 14l5 5 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="submeta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 8v4l3 2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="white" stroke-width="2" opacity=".9"/>
+              </svg>
+              ৩০ মিনিটে দ্রুত স্ক্যান
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              চেকলিস্ট + টেমপ্লেট
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21s7-4.4 7-10.2A4.8 4.8 0 0 0 12 7.4 4.8 4.8 0 0 0 5 10.8C5 16.6 12 21 12 21Z" stroke="white" stroke-width="2" opacity=".9"/>
+              </svg>
+              নতুনদের জন্য Easy
+            </span>
+          </div>
+        </div>
+
+        <!-- ✅ Cover -->
+        <div class="cover">
+          <div class="book">
+            <div class="badge">Best Seller</div>
+            <div class="img">
+              <!-- ✅ Replace cover image src -->
+              <img src="your-ebook-cover-image.jpg" alt="KSA Work Starter Pack Ebook Cover"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="fallback" style="display:none;">
+                <div class="t1">KSA Work Starter Pack</div>
+                <div class="t2">আপনার নতুন কাজ ও জীবনের জন্য প্রিমিয়াম গাইড</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ Description -->
+    <section class="section" id="inside">
+      <h2>এই প্যাকেজটা আসলে কী?</h2>
+      <p>
+        এটা শুধুই “একটা ইবুক” নয়—এটা আপনার জন্য একটি <strong>সিস্টেম</strong>।
+        আপনি কী করবেন, কখন করবেন, কী এড়াবেন—সবকিছু একদম পরিষ্কারভাবে সাজানো।
+        ফলে সৌদি আরবে গিয়ে শুরুতেই যে ভুলগুলো মানুষ করে, সেগুলো আপনি আগেই এড়িয়ে চলতে পারবেন।
+      </p>
+    </section>
+
+    <!-- ✅ Features -->
+    <section class="section">
+      <h2>ভেতরে কী কী পাবেন?</h2>
+      <p>নিচের টপিকগুলো প্র্যাকটিক্যালভাবে সাজানো—যাতে আপনি বাস্তবে কাজে লাগাতে পারেন।</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="hd">
+            <div class="ic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M7 7h10v14H7V7Z" stroke="white" stroke-width="2"/>
+                <path d="M9 7V5a3 3 0 0 1 6 0v2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <b>ভিসা + ইকামা রোডম্যাপ</b>
+              <span>স্টেপ-বাই-স্টেপ প্রসেস, প্রয়োজনীয় ডকুমেন্ট, ভুল এড়ানোর চেকলিস্ট।</span>
+            </div>
+          </div>
+          <div class="mini">
+            <span class="tag">Checklist</span><span class="tag">Step-by-step</span><span class="tag">Common mistakes</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hd">
+            <div class="ic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3l9 5-9 5-9-5 9-5Z" stroke="white" stroke-width="2"/>
+                <path d="M3 8v8l9 5 9-5V8" stroke="white" stroke-width="2" opacity=".9"/>
+              </svg>
+            </div>
+            <div>
+              <b>কর্মক্ষেত্রের নিয়ম + স্মার্ট কমিউনিকেশন</b>
+              <span>ম্যানেজার/সুপারভাইজার হ্যান্ডলিং, রিপোর্টিং স্টাইল, প্রফেশনাল আচরণ।</span>
+            </div>
+          </div>
+          <div class="mini">
+            <span class="tag">Work culture</span><span class="tag">Do & Don’t</span><span class="tag">Professional</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hd">
+            <div class="ic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 1v22" stroke="white" stroke-width="2" opacity=".7"/>
+                <path d="M17 5H9a3 3 0 0 0 0 6h6a3 3 0 0 1 0 6H7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <b>বাজেট, সেভিংস, রেমিট্যান্স প্ল্যান</b>
+              <span>বাসা, খাবার, ট্রান্সপোর্ট—মাসিক প্ল্যান + সেভিংস স্ট্র্যাটেজি।</span>
+            </div>
+          </div>
+          <div class="mini">
+            <span class="tag">Budget</span><span class="tag">Savings</span><span class="tag">Remittance</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hd">
+            <div class="ic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M7 21V3h10v18" stroke="white" stroke-width="2"/>
+                <path d="M9 7h6M9 11h6M9 15h6" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".9"/>
+              </svg>
+            </div>
+            <div>
+              <b>লেবার ল + কন্ট্রাক্ট বেসিক</b>
+              <span>কন্ট্রাক্টে কী দেখবেন, ওভারটাইম, ছুটি, এন্ড-অফ-সার্ভিস—সহজ ভাষায়।</span>
+            </div>
+          </div>
+          <div class="mini">
+            <span class="tag">Labour law</span><span class="tag">Contract</span><span class="tag">Rights</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ CTA / Pricing -->
+    <section class="section">
+      <h2>আজই শুরু করুন</h2>
+      <p>যত দ্রুত প্রস্তুতি, তত কম ঝামেলা—আর তত বেশি আত্মবিশ্বাস।</p>
+
+      <div class="cta">
+        <div class="pricebox">
+          <h3>Premium Pack Access</h3>
+          <div class="price">
+            <div class="big">৳499</div>
+            <div class="sub">একবার কিনলেই—ফাইল আপনার</div>
+          </div>
+
+          <a class="btn btn-primary" style="width:100%; justify-content:center; margin-top:6px;" href="your-ebook-download-link.pdf">
+            এখনই কিনুন / ডাউনলোড
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3v10" stroke="#07130b" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 11l4 4 4-4" stroke="#07130b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 21h12" stroke="#07130b" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </a>
+
+          <ul class="benefits">
+            <li><span class="check" aria-hidden="true">✓</span><span>মোবাইল-ফ্রেন্ডলি PDF (পড়তে আরাম)</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>চেকলিস্ট + কাজের টেমপ্লেট</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>নতুনদের কমন ভুল এড়ানোর গাইড</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>সীমিত সময়ের অফার টেক্সট (ঐচ্ছিক)</span></li>
+          </ul>
+        </div>
+
+        <div class="trustbox">
+          <h4>কেন এই প্যাকেজে ভরসা করবেন?</h4>
+          <div class="trustgrid">
+            <div class="trustitem">
+              <div class="ic" style="width:34px;height:34px;border-radius:12px;" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z" stroke="white" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <div>
+                <b>Practical, Field-tested</b>
+                <span>বাস্তব অভিজ্ঞতাভিত্তিক সাজানো—শুধু থিওরি না।</span>
+              </div>
+            </div>
+            <div class="trustitem">
+              <div class="ic" style="width:34px;height:34px;border-radius:12px;" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 7l-8 10-4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <b>Quick-start Layout</b>
+                <span>নতুনদের জন্য “কী আগে?”—এটা একদম ক্লিয়ার।</span>
+              </div>
+            </div>
+            <div class="trustitem">
+              <div class="ic" style="width:34px;height:34px;border-radius:12px;" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="white" stroke-width="2" opacity=".9"/>
+                </svg>
+              </div>
+              <div>
+                <b>Time Saver</b>
+                <span>ঘন্টার পর ঘন্টা সার্চ না করে—এক জায়গায় সব।</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ ADD ONLY: Testimonials section (FAQ এর আগে) -->
+    <section class="section" id="testimonials">
+      <div class="t-head">
+        <div>
+          <!-- ✅ Title removed as you asked -->
+          <p>বাস্তব অভিজ্ঞতার ফিডব্যাক—যাতে আপনি নিশ্চিন্তে সিদ্ধান্ত নিতে পারেন।</p>
+        </div>
+
+        <div class="right">
+          <!-- ✅ Premium Verified Users + STAR -->
+          <div class="chip">
+            <span class="dot"></span>
+            <span>
+              <strong>Premium Verified Users</strong>
+              <span style="opacity:.85;"> • ⭐ Real Reviews</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-grid">
+
+        <div class="t-card">
+          <div class="t-top">
+            <div class="t-user">
+              <div class="t-avatar">RI</div>
+              <div class="t-meta">
+                <b>রফিকুল ইসলাম</b>
+                <span>দাম্মাম • New Worker</span>
+              </div>
+            </div>
+            <div class="t-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+            </div>
+          </div>
+          <p class="t-quote">“ইকামা–বিমা–বাসা–বাজেট—সব একদম স্টেপ-বাই-স্টেপ। সৌদিতে এসে প্রথম সপ্তাহে যে কনফিউশন ছিল, এই গাইড পড়ে একদিনেই ক্লিয়ার হয়ে গেছে।”</p>
+          <div class="t-foot">
+            <span class="t-badge green">Verified Buyer</span>
+            <span class="t-badge">Checklist Loved</span>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-top">
+            <div class="t-user">
+              <div class="t-avatar">SH</div>
+              <div class="t-meta">
+                <b>সাইফুল হক</b>
+                <span>রিয়াদ • Driver</span>
+              </div>
+            </div>
+            <div class="t-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+            </div>
+          </div>
+          <p class="t-quote">“কন্ট্রাক্টের কোন লাইনটা গুরুত্বপূর্ণ—আগে বুঝতাম না। বইটা পড়ে নিজের অধিকার আর করণীয়টা পরিষ্কার হয়েছে। খুবই প্র্যাকটিক্যাল।”</p>
+          <div class="t-foot">
+            <span class="t-badge green">Verified Buyer</span>
+            <span class="t-badge">Labour Law</span>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-top">
+            <div class="t-user">
+              <div class="t-avatar">MR</div>
+              <div class="t-meta">
+                <b>মোস্তাফিজুর রহমান</b>
+                <span>জেদ্দা • Technician</span>
+              </div>
+            </div>
+            <div class="t-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+            </div>
+          </div>
+          <p class="t-quote">“বাজেট প্ল্যান আর খরচ নিয়ন্ত্রণের অংশটা অসাধারণ। এখন মাসের শুরুতেই প্ল্যান করে চলি—সেভিংসও আগের চেয়ে ভালো হচ্ছে।”</p>
+          <div class="t-foot">
+            <span class="t-badge green">Verified Buyer</span>
+            <span class="t-badge">Budget Plan</span>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-top">
+            <div class="t-user">
+              <div class="t-avatar">AM</div>
+              <div class="t-meta">
+                <b>আবদুল্লাহ আল মামুন</b>
+                <span>জুবাইল • Helper</span>
+              </div>
+            </div>
+            <div class="t-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21z"/></svg>
+            </div>
+          </div>
+          <p class="t-quote">“ওয়ার্ক কালচার অংশটা সবচেয়ে কাজে লেগেছে। নতুন জায়গায় কীভাবে কথা বলতে হয়, কী কী এড়িয়ে চলতে হয়—সব পরিষ্কার।”</p>
+          <div class="t-foot">
+            <span class="t-badge green">Verified Buyer</span>
+            <span class="t-badge">Work Culture</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ FAQ -->
+    <section class="section">
+      <h2>FAQ (প্রশ্নোত্তর)</h2>
+      <p>কমন কিছু প্রশ্নের উত্তর—যাতে সিদ্ধান্ত নিতে সহজ হয়।</p>
+
+      <div class="faq">
+        <details>
+          <summary><span class="q">এটা কার জন্য সবচেয়ে বেশি কাজে লাগবে?</span><span class="plus">+</span></summary>
+          <p>নতুন ভিসায় সৌদিতে আসছেন, নতুন কোম্পানি/নতুন সিটি—বা প্রথমবার জব শুরু করছেন—এদের জন্য সবচেয়ে বেশি কার্যকর।</p>
+        </details>
+        <details>
+          <summary><span class="q">ইবুকটি কোন ফরম্যাটে পাব?</span><span class="plus">+</span></summary>
+          <p>PDF ফরম্যাটে (মোবাইল/কম্পিউটার দুটোতেই পড়া যাবে)।</p>
+        </details>
+        <details>
+          <summary><span class="q">আমি কি পরে আবার ডাউনলোড করতে পারব?</span><span class="plus">+</span></summary>
+          <p>আপনি যেখানে রাখবেন (Google Drive/Phone Storage) সেখান থেকে যেকোনো সময় পড়তে পারবেন।</p>
+        </details>
+        <details>
+          <summary><span class="q">আমি কি নিজের বন্ধু/ভাইকে শেয়ার করতে পারি?</span><span class="plus">+</span></summary>
+          <p>আপনি চাইলে শেয়ার পলিসি আলাদা করে লিখে দিতে পারেন (যেমন: “ব্যক্তিগত ব্যবহারের জন্য”)—সেটা আপনার সিদ্ধান্ত।</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ✅ Footer -->
+    <footer>
+      <!-- ✅ Replace email + brand name -->
+      যোগাযোগ: <a href="mailto:support@yourcompany.com">support@yourcompany.com</a> |
+      &copy; 2025 <span style="color:rgba(233,236,255,.85); font-weight:700;">আপনার ব্র্যান্ড/কোম্পানির নাম</span>
+    </footer>
+
+  </div>
+
+  <!-- ✅ Sticky CTA (mobile) -->
+  <div class="sticky" role="region" aria-label="Quick buy bar">
+    <div class="row">
+      <div class="left">
+        <b>KSA Work Starter Pack</b>
+        <span>মাত্র ৳499 • আজই কিনুন</span>
+      </div>
+      <a class="btn btn-primary" href="your-ebook-download-link.pdf">Buy Now</a>
+    </div>
+  </div>
+</body>
+  </html>
